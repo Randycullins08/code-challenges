@@ -3,19 +3,29 @@
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 
+// function basicOp(operation, value1, value2) {
+//   switch (operation) {
+//     case "+":
+//       return value1 + value2;
+//     case "-":
+//       return value1 - value2;
+//     case "*":
+//       return value1 * value2;
+//     case "/":
+//       return value1 / value2;
+//     default:
+//       throw new Error("Invalid operation");
+//   }
+// }
+
 function basicOp(operation, value1, value2) {
-  switch (operation) {
-    case "+":
-      return value1 + value2;
-    case "-":
-      return value1 - value2;
-    case "*":
-      return value1 * value2;
-    case "/":
-      return value1 / value2;
-    default:
-      throw new Error("Invalid operation");
-  }
+  const cases = {
+    "+": value1 + value2,
+    "-": value1 - value2,
+    "*": value1 * value2,
+    "/": value1 / value2,
+  };
+  return cases[operation];
 }
 
 console.log(basicOp("+", 4, 7));
