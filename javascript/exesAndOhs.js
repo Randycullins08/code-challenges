@@ -9,20 +9,26 @@
 // XO("zzoo") => false
 
 function XO(str) {
-  let x = 0;
-  let o = 0;
+  //   let x = 0;
+  //   let o = 0;
 
-  for (let char of str) {
-    if (char.toLowerCase() === "x") {
-      x += 1;
-    }
+  //   for (let char of str) {
+  //     if (char.toLowerCase() === "x") {
+  //       x += 1;
+  //     }
 
-    if (char.toLowerCase() === "o") {
-      o += 1;
-    }
-  }
+  //     if (char.toLowerCase() === "o") {
+  //       o += 1;
+  //     }
+  //   }
 
-  return x === o;
+  //   return x === o;
+
+  // cleaner solution:
+  str = str.toLowerCase().split("");
+  return (
+    str.filter((x) => x === "x").length === str.filter((x) => x === "o").length
+  );
 }
 
 console.log(XO("ooxx"));
